@@ -1,0 +1,48 @@
+query AllPeople {
+    allPeople {
+    totalCount
+    people {
+      id
+      name
+      gender
+      birthYear
+      species {
+        name
+      }
+      homeworld {
+        name
+      }
+    }
+  }
+}
+
+query SinglePeople($id: ID) {
+  person(id: $id) {
+    id
+    name
+    gender
+    birthYear
+    species {
+      id
+      name
+    }
+    homeworld {
+      id
+      name
+      population
+      diameter
+      rotationPeriod
+      orbitalPeriod
+      gravity
+    }
+    filmConnection {
+      films {
+        title
+        releaseDate
+      }
+    }
+    eyeColor
+    height
+    mass
+  }
+}
